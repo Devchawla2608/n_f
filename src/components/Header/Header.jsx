@@ -32,6 +32,10 @@ const NAV__LINKS = [
     display: "Explore",
     url: "/Explore",
   },
+  {
+    display: "Sign Out",
+    url: "/Signout",
+  },
 ];
 
 const Header = () => {

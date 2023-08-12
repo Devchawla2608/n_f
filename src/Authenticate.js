@@ -14,4 +14,22 @@ function authenticate(){
     }
 }
 
+function SignedInUser(){
+    const token = localStorage.getItem('token');
+    if(token){
+        const user = jwt.decode(token);
+    if(!user){
+        localStorage.removeItem('token');
+        alert("Please Login First");
+        return false;
+    }else{
+        return user;
+    }
+    }else{
+        alert("Please Login First");
+        return false;
+    }
+}
+
+
 export default authenticate;

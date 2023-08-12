@@ -10,6 +10,7 @@ export const PrivateRoute = (props) => {
     console.log('props', props);
     const [authenticated, setAuthenticated] = useState(null);
     const [loadingComplete, setLoadingComplete] = useState(false);
+    console.log("Hello I am here");
     useEffect(() => {
         const ni_token = localStorage.getItem('token');
         if(ni_token){
@@ -17,12 +18,14 @@ export const PrivateRoute = (props) => {
             if(!user){
                 localStorage.removeItem('token');
                 setAuthenticated('Invalid Token');
+                alert("Login Again")
                 navigate('/');
             }
             setAuthenticated('Verify Token Respone');
             setLoadingComplete(true);
         }else{
             setAuthenticated('No Token');
+            alert("Login")
             navigate('/');
         }
     }, []);

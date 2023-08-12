@@ -20,7 +20,6 @@ const SignIn = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
     // ----------- handleSignIn --------------- //
     const handleSignIn = async (e) => {
         e.preventDefault()
@@ -36,6 +35,7 @@ const SignIn = () => {
         }
         })
         if(response.data.data){
+            alert('Sign In Successfully')
             localStorage.setItem('token', response.data.data)
             window.location.href = '/home'
         }else{

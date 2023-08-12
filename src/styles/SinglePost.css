@@ -43,7 +43,7 @@
   #post_username{
     font-size: 1.5rem;
     font-weight: light;
-    color: #fff;
+    color:antiquewhite;
     font-family: "poppins", "sans-serif" ;
   }
   #post_username:hover{
@@ -60,7 +60,7 @@
   }
   #post_header_operations > a{
     text-decoration: none;
-    color: #fff;
+    color:antiquewhite;
     font-weight: 300;
     font-size: 1.5rem;
   }
@@ -99,6 +99,7 @@
 .fa-heart:before {
   filter: invert(1);
   font-size: 2rem;
+  
 }
 .fa-comment:before {
   filter: invert(1);
@@ -114,12 +115,13 @@
   justify-content: space-around;
   flex-direction: column;
   width: 33%;
-  /* border: 2px solid black; */
+  cursor: pointer;
 }
 .post_l_c_s > a{
   text-decoration: none;
   color: black;
   font-weight: 300;
+  cursor: pointer;
 }
 .post_l_c_s > a > i{
   font-size: 2rem;
@@ -127,23 +129,15 @@
 
   #post_info{
     width: 100%;
-    flex: 1;
+    flex: 3;
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     justify-content: space-around;
     flex-direction: column;
-    padding: 10px;
-  }
-  #post_new_comment{
-    text-decoration: none;
-    color: black;
-    font-weight: 300;
-    width: 100%;
-    border-top: 2px solid #fff;
     padding: 5px;
-    
+    padding-left: 10px;
   }
-
-  #post_new_comment > h1{
-    font-size: 1rem;
+  #post_info > h1{
+    font-size: 1.8rem;
+    color:antiquewhite;
   }

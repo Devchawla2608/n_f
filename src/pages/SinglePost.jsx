@@ -1,10 +1,9 @@
 import React from 'react'
 // ----------- Images --------------- //
 import Hero from '../assets/images/hero.jpg'
-import profileImage from '../assets/images/img-07.jpg' 
-import '../styles/SinglePost.css'
+import "../styles/SinglePost.css"
 
-const SinglePost = () => {
+const SinglePost = ({key , post}) => {
   return (
             <div class="post">
             
@@ -12,7 +11,7 @@ const SinglePost = () => {
                 <div id="post_header">
                     <div id="post_header_user">
                     <img id="post_user_img" src={Hero} alt=""/>
-                    <h2 id="post_username">Deepanshu</h2>
+                    <h2 id="post_username">{post.user.name}</h2>
                     </div>
                     <div id="post_header_operations">
                          <i class="fa-solid fa-ellipsis-v"></i>
@@ -21,7 +20,7 @@ const SinglePost = () => {
             
             {/* Post Content */}
             <div id="post_content">
-                    <img src={profileImage} alt=""/>
+                    <img src={post.image} alt=""/>
             </div>
 
             {/* Post Footer */}
@@ -47,7 +46,7 @@ const SinglePost = () => {
                     </div>
                     </div>
                 <div id="post_info">
-            <h1>Add Comment</h1> 
+            <h1>Caption : {post.caption}</h1> 
                 </div>
             </div>
             </div>

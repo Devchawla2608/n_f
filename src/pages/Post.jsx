@@ -5,43 +5,45 @@ import React , { useState , useEffect }  from 'react'
 // ----------- Comman Section --------------- //
 import CommonSection from "../components/ui/Common-section/CommonSection";
 
-// -------------------------- Axios ---------------------------- //
-import axios from 'axios'
+// --------------------------- LogedIn User --------------------------- //
+import SignedInUser from '../Authenticate.js'
 
 // -------------------------- CSS ---------------------------- //
 import '../styles/Post.css'
 
 const baseUrl = "https://backend-nft-vibe-plaza.onrender.com";
 
-const Post = () => {
+const Post = () => { 
 
     // -------------------------- State ( image , caption ) ---------------------------- //
     const [image, setImage] = useState('')
     const [caption, setCaption] = useState('')
     const [url, setUrl] = useState('')
-
     useEffect(()=>{
         if(url){
-        fetch("http://localhost:8000/api/posts/create" , {
+        fetch(`${baseUrl}/api/posts/create` , {
             method: 'post',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-access-token':localStorage.getItem('token')
             },
             body: JSON.stringify({
                 caption,
-                pic: url
+                pic: url,
+                user:SignedInUser()
             })
         }).then(res => res.json())
         .then(data => {
+            alert("Post Created Successfully")
             console.log(data)
         }
         ).catch(err => {
+            alert("Error in post creation")
             console.log(err)
         }
         )
     }
     },[url])
-
     // -------------------------- Handle Change ---------------------------- //
 
     const postDetails = async (e) => {
@@ -73,16 +75,6 @@ const Post = () => {
         }
 
     }
-        
-
-    const handleChange = async (e) => {
-        e.preventDefault()
-        const formData = new FormData()
-        formData.append('pic', url)
-        formData.append('caption', caption)
-
-    }
-
   return (
     <>
             <CommonSection title="Post" />
