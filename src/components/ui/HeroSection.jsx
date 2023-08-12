@@ -17,9 +17,7 @@ const HeroSection = () => {
                 <span>sell extraordinary</span> NFTs
               </h2>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Deleniti excepturi omnis neque adipisci sequi ullam unde in
-                minus quis quos.
+              Dive into the world of NFTs, where unique creativity meets blockchain. Discover, own, and trade rare digital assets like never before.
               </p>
 
               <div className="hero__btns d-flex align-items-center gap-4">

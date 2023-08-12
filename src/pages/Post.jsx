@@ -1,6 +1,6 @@
 
 // -------------------------- React ---------------------------- //
-import React , { useState }  from 'react'
+import React , { useState , useEffect }  from 'react'
 
 // ----------- Comman Section --------------- //
 import CommonSection from "../components/ui/Common-section/CommonSection";
@@ -18,19 +18,69 @@ const Post = () => {
     // -------------------------- State ( image , caption ) ---------------------------- //
     const [image, setImage] = useState('')
     const [caption, setCaption] = useState('')
+    const [url, setUrl] = useState('')
+
+    useEffect(()=>{
+        if(url){
+        fetch("http://localhost:8000/api/posts/create" , {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                caption,
+                pic: url
+            })
+        }).then(res => res.json())
+        .then(data => {
+            console.log(data)
+        }
+        ).catch(err => {
+            console.log(err)
+        }
+        )
+    }
+    },[url])
 
     // -------------------------- Handle Change ---------------------------- //
+
+    const postDetails = async (e) => {
+
+        try{
+    
+
+            e.preventDefault()
+            const data = new FormData()
+            data.append('file', image)
+            data.append('upload_preset', 'nft-marketplace')
+            data.append('cloud_name', 'nftcloud')
+             fetch("https://api.cloudinary.com/v1_1/nftcloud/image/upload" , {
+                method: 'post',
+                body: data
+            })
+            .then(res => res.json())
+            .then(data => {
+                setUrl(data.url);
+            }
+            )
+            .catch(err => {
+                console.log(err)
+            }
+            )
+        }
+        catch(err){
+            console.log("This is error " , err)
+        }
+
+    }
+        
+
     const handleChange = async (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('image', image)
+        formData.append('pic', url)
         formData.append('caption', caption)
-        const response = await axios.post(`${baseUrl}/api/posts/create`, formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        })
-        console.log(response)
+
     }
 
   return (
@@ -40,11 +90,15 @@ const Post = () => {
                 <section id="feed_posts">
                     <h4>Create Post</h4>
                     <img className="upload_image" src="/images/upload.jpeg" alt="" width="auto" height="auto"/> 
-                    <form action="/posts/create" enctype="multipart/form-data" method="post" onSubmit={handleChange}>
+                    <form action="/posts/create"
+                    id='post_form' 
+                    encType="multipart/form-data" method="post" onSubmit={postDetails}>
                         <input type="file" name="image" placeholder="Post"
+                        id='post_image_selector'
                           onChange={(e) => setImage(e.target.files[0])}
                         />
                         <textarea
+                        className='posst_caption_textarea'
                         name="caption"
                         id=""
                         cols="30"
@@ -52,7 +106,7 @@ const Post = () => {
                         placeholder="Type Here..."
                         onChange={(e) => setCaption(e.target.value)}
                         ></textarea>
-                        <input type="submit" values="Post" />
+                        <input id='post_submit_button' type="submit" values="Post" />
                     </form>
                 </section>
             </div>

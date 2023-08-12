@@ -7,25 +7,24 @@ import "./step-section.css";
 const STEP__DATA = [
   {
     title: "Setup your wallet",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
-    icon: "ri-wallet-line",
+    desc: "Dive into the world of NFTs, where unique creativity meets blockchain. Discover, own, and trade rare digital assets like never before.",
   },
 
   {
     title: "Create your collection",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Dive into the world of NFTs, where unique creativity meets blockchain. Discover, own, and trade rare digital assets like never before. ",
     icon: "ri-layout-masonry-line",
   },
 
   {
     title: "Add your NFTs",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Dive into the world of NFTs, where unique creativity meets blockchain. Discover, own, and trade rare digital assets like never before.",
     icon: "ri-image-line",
   },
 
   {
     title: "List them for sale",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit eligendi, facilis voluptatum fugit illum ",
+    desc: "Dive into the world of NFTs, where unique creativity meets blockchain. Discover, own, and trade rare digital assets like never before. ",
     icon: "ri-list-check",
   },
 ];
