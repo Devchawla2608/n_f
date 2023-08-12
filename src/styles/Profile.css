@@ -1,0 +1,94 @@
+.Profile{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#profile_box_info{
+    padding: 4px;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    background-color: #343444;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+#profile_box_image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+#profile_box_user_info{
+    padding: 4px;
+}
+#profile_box_user_update{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#profile_box_user_update >h1{
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+#profile_update_button{
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+#profile_update_button > a{
+text-decoration: none;
+color: black;
+font-size: 1rem;
+font-weight: 400;
+}
+
+
+#profile_user_smallInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#profile_user_smallInfo > div{
+    flex: 1;
+}
+#profile_user_smallInfo > div > h1{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+#profile_user_smallInfo > div >p{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: left;
+}
+#profile_user_bio{
+    /* border: 2px solid salmon; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+#profile_user_bio > p{
+    margin: 2px;
+    padding: 0px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: left;
+}
