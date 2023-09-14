@@ -7,10 +7,8 @@ import jwt from 'jsonwebtoken'
 
 export const PrivateRoute = (props) => {
     const navigate = useNavigate();
-    console.log('props', props);
     const [authenticated, setAuthenticated] = useState(null);
     const [loadingComplete, setLoadingComplete] = useState(false);
-    console.log("Hello I am here");
     useEffect(() => {
         const ni_token = localStorage.getItem('token');
         if(ni_token){

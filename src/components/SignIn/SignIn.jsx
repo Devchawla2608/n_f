@@ -13,6 +13,7 @@ import axios from 'axios'
 import './SignIn.css'
 
 const baseUrl = "https://backend-nft-vibe-plaza.onrender.com";
+const baseUrl2 = "http://localhost:8000";
 
 const SignIn = () => {
 
@@ -43,6 +44,29 @@ const SignIn = () => {
         }
     }   
 
+    const handleTestUser = async (e) => {
+        console.log('test user')
+        const response = await axios.post(`${baseUrl}/api/users/createSessionTestUser`, {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body :{
+                name,
+                email,
+                password,
+            }
+            })
+            console.log(response)
+            if(response.data.data){
+                alert('Sign In Successfully')
+                localStorage.setItem('token', response.data.data)
+                window.location.href = '/home'
+            }else{
+                alert('Invalid Credentials')
+            }
+    }  
+
   return (
     // ----------- Sign In --------------- //
     <div className='sign_in'>
@@ -54,6 +78,7 @@ const SignIn = () => {
         <button >Sign In</button>
             </form>
         <p className='sign_in_switch_para'>Do Not Have Account ?? <a href="/sign-up">Sign Up</a> </p>
+        <button onClick={handleTestUser} className='test_user'>Test User ??</button>
     </div>
   )
 }

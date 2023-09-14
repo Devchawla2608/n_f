@@ -30,6 +30,7 @@ const Routers = () => {
   return (
     <Routes>
         <Route path="/" element={auth === false ? <SignIn/> : <Home/>} />
+        <Route path="/test-user" element={auth === false ? <SignIn/> : <Home/>} />
         <Route path="/sign-up" element={ auth === false ? <SignUp/> : <Home/>} />
          <Route path="/home" element={       <PrivateRoute> <Home />  </PrivateRoute> } />
          <Route path="/Signout" element={<PrivateRoute> <SignOut />  </PrivateRoute> } />
