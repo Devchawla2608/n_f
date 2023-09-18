@@ -11,9 +11,12 @@ import SignedInUser from '../Authenticate.js'
 // -------------------------- CSS ---------------------------- //
 import '../styles/Post.css'
 
+import { useNavigate} from 'react-router-dom';
 const baseUrl = "https://backend-nft-vibe-plaza.onrender.com";
 
 const Post = () => { 
+
+    const navigate = useNavigate();
 
     // -------------------------- State ( image , caption ) ---------------------------- //
     const [image, setImage] = useState('')
@@ -73,7 +76,6 @@ const Post = () => {
         catch(err){
             console.log("This is error " , err)
         }
-
     }
   return (
     <>

@@ -25,26 +25,26 @@ const SinglePost = ({key , post}) => {
 
             {/* Post Footer */}
             <div id="post_footer">
-                <div id="post_footer_icons">
-                    {/* <!-- post comment button --> */}
+                {/* <div id="post_footer_icons">
+                    <!-- post comment button -->
                     <div class="post_l_c_s">
  
                             <i class="fa-solid fa-heart"></i>
  
                     </div>
-                    {/* <!-- post comment button --> */}
+                    <!-- post comment button -->
                     <div class="post_l_c_s">
  
                             <i class="fa-solid fa-comment"></i>
  
                     </div>
-                    {/* <!-- Post's Share Button --> */}
+                    <!-- Post's Share Button -->
                     <div class="post_l_c_s">
  
                             <i class="fa-solid fa-share"></i>
  
                     </div>
-                    </div>
+                </div> */}
                 <div id="post_info">
             <h1>Caption : {post.caption}</h1> 
                 </div>

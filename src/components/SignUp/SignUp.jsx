@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from 'axios'
 import './SignUp.css'
 const baseUrl = "https://backend-nft-vibe-plaza.onrender.com";
